@@ -16,7 +16,7 @@ We'll also see how Docker dramatically increases the *flexibility* of our runnin
 
 First things first: **install Docker**: on [Linux](https://docs.docker.com/linux/step_one/), [Mac](https://docs.docker.com/mac/step_one/), or [Windows](https://docs.docker.com/windows/step_one/). These install guides link to a bunch of introductory material after installation is complete; it's not necessary to complete those tutorials for this lesson, but they are an excellent introduction to basic Docker usage.
 
-Next up, **download the `rocker/ropensci** base image. As we'll learn in the next section, Docker images are built up in layers, and we always start with something called a *base image*, which contains the really fundamental stuff to our code's context: the base operating system, and some core dependencies. `rocker/ropensci` contains:
+Next up, **download the `rocker/ropensci`** base image. As we'll learn in the next section, Docker images are built up in layers, and we always start with something called a *base image*, which contains the really fundamental stuff to our code's context: the base operating system, and some core dependencies. `rocker/ropensci` contains:
 
  - Debian linux as the base operating system
  - the entire Hadleyverse
