@@ -225,6 +225,7 @@ docker run -dp 8787:8787 my-r-image
 Go back to RStudio in the browser, and there `data.dat` will be, hanging out in the files visible to RStudio. In this way, we can capture files as part of our Docker image, so they're always available along with the rest of our image in the exact same state.
 
 > **Protip: Cached Layers**
+
 > While building and rebuilding your Docker image in this tutorial, you may have noticed lines like this:
 > ```
 Step 2 : RUN wget https://cran.r-project.org/src/contrib/gapminder_0.1.0.tar.gz
