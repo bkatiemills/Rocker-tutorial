@@ -197,9 +197,10 @@ where `{path-to-rocker-tutorial}` is the full path to your `rocker-tutorial` dir
 Go back into RStudio in your browser, and you should see the contents of `rocker-tutorial` in the file tab of RStudio's explorer pane; click on `gapminder-plot.R` to load it, and run the whole thing via Code -> Run Region -> Run All, and the figure from gapminder's docs is reproduced. Also note, this figure is produced using `ggplot2` - one of the dependencies we had pre-installed from the base Rocker image.
 
 > **Protip: Separating Code and Dependencies**
+
 > We just saw how we can encapsulate dependencies in a docker image, and expose some local code on our machine to run in that context; presumably that local code could be a git repository. While we'll see in the next section how to include files right in our Docker image, in general it may be a good idea to keep these things separate; code typically changes much faster than dependencies, and you might not want your Docker image to change every time you change your code. By mounting code externally like we just did, we maintain separation of powers: git for code, Docker for context.
 
-3.4 Packaging Up Files in our Image
+### 3.4 Packaging Up Files in our Image
 
 One other thing that might be useful, is packaging up not only dependencies, but perhaps some static files inside our Docker image. As noted above, it might be best to avoid packaging code that changes frequently along with you image (though there are certainly many exceptions to this 'rule'); but if there are files you want every user of your dependency stack to have in the same way every time, you can include them in your image via the `ADD` command in your Dockerfile. Make a new file called `data.dat`, and put whatever you like in it; then, add the following lines to your Dockerfile:
 
