@@ -111,7 +111,7 @@ Dockerfiles are a set of instructions on how to add things to a base image. They
 FROM rocker/ropensci:latest
 ```
 
-This tells Docker to start with tje `rocker/ropensci` base image - that's what we've been using so far. The `FROM` command must always always always be the first thing in your Dockerfile; this is the foundation of the house you are building.
+This tells Docker to start with the `rocker/ropensci` base image - that's what we've been using so far. The `FROM` command must always always always be the first thing in your Dockerfile; this is the foundation of the house you are building.
 
 Next, let's add another layer on top of our base, in order to have `gapminder` pre-installed and ready to go:
 
