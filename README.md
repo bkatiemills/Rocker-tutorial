@@ -116,8 +116,8 @@ This tells Docker to start with the `rocker/ropensci` base image - that's what w
 Next, let's add another layer on top of our base, in order to have `gapminder` pre-installed and ready to go:
 
 ```
-#RUN wget https://cran.r-project.org/src/contrib/gapminder_0.1.0.tar.gz
-#RUN R CMD INSTALL gapminder_0.1.0.tar.gz
+RUN wget https://cran.r-project.org/src/contrib/gapminder_0.1.0.tar.gz
+RUN R CMD INSTALL gapminder_0.1.0.tar.gz
 ```
 
 `RUN` commands in your Dockerfile execute shell commands. In this example, the first line downloads the gapminder source from CRAN, and the second line installs it. Save that file, and return to your docker terminal; we can now build our image by doing:
