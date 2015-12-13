@@ -202,7 +202,9 @@ Go back into RStudio in your browser, and you should see the contents of `rocker
 
 ### 3.4 Packaging Up Files in our Image
 
-One other thing that might be useful, is packaging up not only dependencies, but perhaps some static files inside our Docker image. As noted above, it might be best to avoid packaging code that changes frequently along with you image (though there are certainly many exceptions to this 'rule'); but if there are files you want every user of your dependency stack to have in the same way every time, you can include them in your image via the `ADD` command in your Dockerfile. Make a new file called `data.dat`, and put whatever you like in it; then, add the following lines to your Dockerfile:
+One other thing that might be useful, is packaging up not only dependencies, but perhaps some static files inside our Docker image. As noted above, it might be best to avoid packaging code that changes frequently along with your image (though there are certainly many exceptions to this 'rule'); but if there are files you want every user of your dependency stack to have in the same way every time, you can include them in your image via the `ADD` command in your Dockerfile. 
+
+Make a new file called `data.dat`, and put whatever you like in it; then, add the following lines to your Dockerfile:
 
 ```
 ADD data.dat /home/rstudio/
