@@ -7,6 +7,3 @@ RUN R CMD INSTALL gapminder_0.1.0.tar.gz
 
 # let's wrap some files up in our docker image, too:
 ADD gapminder-plot.R /home/rstudio/
-
-# metadata!
-#LABEL title="my-aweseome-docker-image" date="2077-10-23"
