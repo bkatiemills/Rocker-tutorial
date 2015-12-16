@@ -135,7 +135,7 @@ RUN R CMD INSTALL gapminder_0.1.0.tar.gz
 docker build -t my-r-image .
 ```
 
-`-t my-r-image` gives our image a name (note the name must include at least one `-`), and the `.` says all the resources we need to build this image are in our current directory. List your images via:
+`-t my-r-image` gives our image a name (note image names are always all lower case), and the `.` says all the resources we need to build this image are in our current directory. List your images via:
 
 ```
 docker images
