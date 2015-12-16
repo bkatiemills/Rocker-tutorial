@@ -37,7 +37,9 @@ docker run rocker/ropensci
 
 That's ok - this base image automatically launches a live web server to serve RStudio from, which we'll play with in a minute. If you see some messages like those depicted, everything worked; press `ctrl-c` to kill the server.
 
-Last step: **find the IP RStudio is going to be posted at.** Do the following command:
+Last step: **find the IP RStudio is going to be posted at.**
+
+**Mac or Widnows:**
 
 ```
 docker-machine ls
@@ -53,6 +55,13 @@ default   *        virtualbox   Running   tcp://192.168.99.100:2376
 
 So my IP address would be `192.168.99.100`. Keep this handy - we'll need it in the next step.
 
+**Linux**
+
+At you command prompt, do
+
+```
+docker inspect --format '{{ .NetworkSettings.IPAddress }}' $(docker ps -q)
+```
 
 
 ## 3. Working With Docker
@@ -126,7 +135,7 @@ RUN R CMD INSTALL gapminder_0.1.0.tar.gz
 docker build -t my-r-image .
 ```
 
-`-t my-r-image` gives our image a name, and the `.` says all the resources we need to build this image are in our current directory. List your images via:
+`-t my-r-image` gives our image a name (note the name must include at least one `-`), and the `.` says all the resources we need to build this image are in our current directory. List your images via:
 
 ```
 docker images
