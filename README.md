@@ -31,7 +31,26 @@ cd rocker-tutorial
 docker run rocker/ropensci
 ```
 
- **This is a 3GB download**, so now would be a good time for more coffee; also, when it's done, it'll look like it's just hanging:
+=======================================================================
+
+**NOTE FOR LINUX USERS**
+
+If you are on Linux, every use of `docker` must be prefixed with `sudo`. Docker cannot run without root permissions on Linux. For more info on why this is, or to run a workaround that does not require `sudo`, check out [this link](https://docs.docker.com/engine/installation/ubuntulinux/#giving-non-root-access) from the Docker documentation.
+
+With this in mind, this line on Linux:
+```
+docker run rocker/ropensci
+```
+must be changed to:
+```
+sudo docker run rocker/ropensci
+```
+
+This needs to be done for every use of `docker` that you see in this tutorial. 
+
+========================================================================
+
+ **rocker/opensci is a 3GB download**, so now would be a good time for more coffee; also, when it's done, it'll look like it's just hanging:
 
  ![install complete](img/install.png)
 
@@ -60,7 +79,7 @@ So my IP address would be `192.168.99.100`. Keep this handy - we'll need it in t
 At you command prompt, do
 
 ```
-docker inspect --format '{{ .NetworkSettings.IPAddress }}' $(docker ps -q)
+sudo docker inspect --format '{{ .NetworkSettings.IPAddress }}' $(sudo docker ps -q)
 ```
 
 
